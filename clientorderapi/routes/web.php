@@ -95,7 +95,7 @@ Route::prefix('type_activity')->group(function(){
 
 
 //Actividad
-Route::middleware(['auth','can:admin-supervisor'])->prefix('activity')->group(function(){
+Route::prefix('activity')->group(function(){
    Route::get('/index', [ActivityController::class,'index']) ->name('activity.index');
    Route::get('/create', [ActivityController::class,'create']) ->name('activity.create');
    Route::get('/edit/{id}', [ActivityController::class,'edit']) ->name('activity.edit');
@@ -123,7 +123,7 @@ Route::middleware(['auth','can:admin-supervisor'])->prefix('order')->group(funct
 
 
 //Tecnico
-Route::middleware(['auth','can:supervisor'])->prefix('technician')->group(function(){
+Route::prefix('technician')->group(function(){
    Route::get('/index', [TechnicianController::class,'index']) ->name('technician.index');
    Route::get('/create', [TechnicianController::class,'create']) ->name('technician.create');
    Route::get('/edit/{id}', [TechnicianController::class,'edit']) ->name('technician.edit');

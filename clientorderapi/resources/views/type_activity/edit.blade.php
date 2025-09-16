@@ -5,14 +5,14 @@
 @include('templates/messages')
     <div class="row">
         <div class="col-lg-12 mb-4">
-            <form action="{{ route('type_activity.update', $typeactivity['id']) }}" method="POST">
+            <form action="{{ route('type_activity.update', $type_activity['id']) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="row form-group">
                 <div class="col-lg-12 mb-4">
                     <label for="description">Descripcion</label>
                     <input type="text" class="form-control" name="description" id="description" required
-                    value="{{ $typeactivity['description'] }}">
+                    value="{{ $type_activity['description'] }}">
                 </div>
             </div>
             <div class="row">
