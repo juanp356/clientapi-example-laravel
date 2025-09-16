@@ -120,7 +120,7 @@ class ActivityController extends Controller
     public function update(Request $request, string $id)
     {
         $url = env('URL_BASE_API',"http://localhost:8000");
-            $response = Http::acceptJson()->withToken(Session::get('token'))->post($url . '/activity/'. $id,[
+            $response = Http::acceptJson()->withToken(Session::get('token'))->put($url . '/activity/'. $id,[
                 'id' => $request->$id,
                 'description' => $request->description,
                 'hours' => $request->hours,
